@@ -1,0 +1,36 @@
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(back-image.png);
+    background-size: cover;
+    background-position: center;
+     padding: 10px 10%;
+    overflow: hidden;
+    position: relative;
+}
+.hero h1{
+    font-size: 3rem;
+    color: #710101;
+    text-align: top-left;
+    margin-top: 100px;
+}
+.hero p{
+    font-size:medium;
+    color:rgb(143, 141, 6);
+
+}
+.hero h2{
+    font-size: 2rem;
+    color: #ca2660;
+    text-align: left;
+    margin-top: 100px;
+    
+}
+.hero ol{
+    font-size:medium;
+    color:rgb(3, 169, 34);
+}
+.hero li{
+    font-size:medium;
+    color:rgb(2, 47, 83);
+}

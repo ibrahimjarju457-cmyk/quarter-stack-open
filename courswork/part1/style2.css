@@ -1,0 +1,147 @@
+/* Colors live in variables so they are easy to change in one place */
+:root {
+  --bg: #f4f6f9;
+  --card: #ffffff;
+  --ink: #0f1b2d;
+  --muted: #46556b;
+  --line: #dde3ec;
+  --accent: #0b6e78;
+  --accent-ink: #ffffff;
+  --chip: #e3f1f2;
+  --chip-ink: #0a5760;
+}
+
+/* Automatic dark mode for devices set to dark */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1520;
+    --card: #152131;
+    --ink: #eaf0f7;
+    --muted: #aab7c8;
+    --line: #25354a;
+    --accent: #4fc3cf;
+    --accent-ink: #08222a;
+    --chip: #17313a;
+    --chip-ink: #8fe0e8;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+/* Centers the page and limits its width */
+main {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 4rem;
+}
+
+/* Two columns: photo on the left, text on the right */
+.card {
+  display: grid;
+  grid-template-columns: 15rem 1fr;
+  gap: 3rem;
+  align-items: start;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  padding: 3rem;
+}
+
+.photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 1rem;
+  border: 1px solid var(--line);
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+h1 {
+  font-family: "DM Serif Display", Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: clamp(2.25rem, 6vw, 3.25rem);
+  line-height: 1.08;
+  margin: 0 0 0.35rem;
+}
+
+.role {
+  margin: 0 0 1.75rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.bio p {
+  margin: 0 0 1.15rem;
+  color: var(--muted);
+}
+
+/* Skill tags */
+.chips {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 1.5rem 0 2rem;
+}
+
+.chips li {
+  background: var(--chip);
+  color: var(--chip-ink);
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+}
+
+/* "Learn more" link styled as a button */
+.link {
+  display: inline-block;
+  padding: 0.85rem 1.5rem;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 0.5rem;
+}
+
+.link:hover {
+  filter: brightness(1.1);
+}
+
+.link:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+}
+
+/* On phones, stack the photo above the text */
+@media (max-width: 720px) {
+  .card {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1.75rem;
+  }
+  .photo {
+    max-width: 12rem;
+  }
+}
