@@ -10,7 +10,7 @@
   --paper: #fbfaf7;
   --ink: #1c2030;
   --muted: #565b6b;
-  --line: #dcdde3;
+  --line: #001487;
 }
 
 /* ---------- Base ---------- */
@@ -79,7 +79,7 @@ body {
   margin: 0;
   max-width: 34rem;
   font-size: 1.15rem;
-  color: #d8dcf5;
+  color: #b807af;
 }
 
 /* ---------- Main content ---------- */
