@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Structure Study Guide</title>
+    <!-- Styles live in styles.css so the HTML stays focused on structure. -->
+    <link rel="stylesheet" href="styles2.css" />
+  </head>
+  <body>
+    <!-- The skip link must be the first focusable element on the page.
+         It targets #main, so keyboard users can bypass the table of contents. -->
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <!-- ===== THIS IS IMPORTANT INFORMATION  ===== -->
+    <header>
+      <h1>HTML Structure Study Guide</h1>
+      <p>
+        Written for classmates in Intro to Web Development, ahead of the first
+        quiz. It covers how an HTML page is organised, why heading levels
+        matter, and the three kinds of list.
+      </p>
+    </header>
+
+    
+
+    <main id="main">
+      <!-- ===== SECTION 1: DOCUMENT SKELETON ===== -->
+      <!-- aria-labelledby gives each section an accessible name taken from
+           its own heading, so there is no duplicated label text to maintain. -->
+      <section id="skeleton" aria-labelledby="skeleton-title">
+        <h2 id="skeleton-title">The document skeleton</h2>
+        <p>
+          Every page starts with a <code>doctype</code> declaration, followed by
+          an <code>html</code> element holding exactly two children: a
+          <code>head</code> and a <code>body</code>.
+        </p>
+
+        <h3>What goes in the head</h3>
+        <p>
+          The head holds information about the page rather than content shown on
+          it. The items below are the ones the validator expects.
+        </p>
+        <ul>
+          <li><code>meta charset</code>, so text displays correctly</li>
+          <li><code>title</code>, shown in the browser tab</li>
+          <li><code>meta viewport</code>, so phones scale the page properly</li>
+        </ul>
+
+        <h3>What goes in the body</h3>
+        <p>
+          The body holds everything visible. Landmarks such as
+          <code>header</code>, <code>nav</code>, <code>main</code> and
+          <code>footer</code> tell screen readers where they are.
+        </p>
+      </section>
+
+      <!-- ===== SECTION 2: HEADING HIERARCHY ===== -->
+      <section id="headings" aria-labelledby="headings-title">
+        <h2 id="headings-title">Heading hierarchy</h2>
+        <p>
+          Use one <code>h1</code> per page, then nest <code>h2</code> through
+          <code>h6</code> without skipping levels. Choose headings for their
+          meaning, never for their size; size is the job of CSS.
+        </p>
+
+        <h3>Common mistakes</h3>
+        <ol>
+          <li>Jumping from <code>h2</code> straight to <code>h4</code></li>
+          <li>Using several <code>h1</code> elements for visual emphasis</li>
+          <li>Using bold paragraphs where a heading belongs</li>
+        </ol>
+      </section>
+
+      <!-- ===== SECTION 3: HOW TO USE LISTS ===== -->
+      <section id="lists" aria-labelledby="lists-title">
+        <h2 id="lists-title">Lists</h2>
+        <p>HTML has three list types. Pick the one that matches the content.</p>
+
+        <!-- A description list suits term/definition pairs. Each dt may be
+             followed by one or more dd elements. -->
+        <dl>
+          <dt><code>ul</code> (unordered)</dt>
+          <dd>Items where order does not matter.</dd>
+          <dt><code>ol</code> (ordered)</dt>
+          <dd>Steps or rankings where order matters.</dd>
+          <dt><code>dl</code> (description)</dt>
+          <dd>Terms paired with their definitions, like this one.</dd>
+        </dl>
+      </section>
+
+      <!-- ===== SECTION 4: PRE-QUIZ CHECKLIST ===== -->
+      <section id="checklist" aria-labelledby="checklist-title">
+        <h2 id="checklist-title">Pre-quiz checklist</h2>
+        <p>Before the quiz, make sure you can do each of these from memory:</p>
+        <ul>
+          <li>Write a valid page skeleton without looking</li>
+          <li>Explain why heading levels must not be skipped</li>
+          <li>Choose the correct list type for a given example</li>
+        </ul>
+        <!-- TODO: Add a short practice section with five sample snippets
+             (e.g. a page that skips from h2 to h4) and an answers list, once
+             the instructor posts the quiz topics. -->
+      </section>
+    </main>
+
+    <!-- ===== PAGE FOOTER ===== -->
+    <footer>
+      <p>Last updated October 2026. Corrections welcome from classmates.</p>
+    </footer>
+  </body>
+</html>
