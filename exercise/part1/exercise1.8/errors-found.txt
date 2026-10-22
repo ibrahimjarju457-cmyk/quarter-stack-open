@@ -1,0 +1,16 @@
+01 | 5  | unclosed tag       | "Unclosed element title" + "End of file seen when expecting text or an end tag"; rest of page not parsed | <title> never closed, so </head> and the whole body were swallowed as title text | added </title> | 18 remaining (hidden errors now visible)
+02 | 2  | case / missing attr | "Consider adding a lang attribute to the html start tag"; uppercase <HTML> not flagged (legal HTML) but inconsistent | tag name in capitals and no lang attribute | <html lang="en"> | 
+03 | 8  | mismatched tag     | "Heading cannot be a child of another heading" | h1 "closed" with <h1> (an opening tag) instead of </h1> | </h1> 
+04 | 9  | unclosed tag       | "Element p not allowed as child of element h2"; "Unclosed element h2" | h2 never closed, so the paragraph became part of the heading | added </h2> |
+05 | 21 | mismatched tag     | "Stray end tag em" | <strong> closed with </em> | </strong> | 
+06 | 26 | unclosed tag       | "Element ul not allowed as child of element h3" | h3 never closed, so the list nested inside the heading | added </h3> | 5 remaining
+07 | 28 | unclosed tag       |  found by reading the source | <li>Reading had no </li> | added </li> 
+08 | 30 | unclosed tag       |  found by reading the source | <li>Gaming had no </li> | added </li> 
+09 | 32 | mismatched tag     | "End tag h3 seen, but there were open elements" | h2 closed with </h3> | </h2> | 
+10 | 37 | unclosed tag       |  found by reading the source | <li>Book One had no </li> | added </li> 
+11 | 39 | incorrect nesting  | "Element ol not allowed as child of element ol" | <ol>Book Three</ol> used a list as an item; only li may be a direct child of ol | <li>Book Three</li> 
+12 | 41 | unclosed tag       |  <li>Book Five had no </li> | added </li> | 
+13 | 43 | unclosed tag       |  <p>Thanks for visiting! had no </p> | added </p> | 
+14 | 21 | incorrect nesting  | "End tag p seen, but there were open elements"; "Unclosed element strong"; "No strong element in scope but a strong end tag seen" | <strong> and <p> overlapped: </p> came before </strong> | <strong>soon!</strong></p>
+15 | 28 | unclosed tag       | no validator message (html end tag is optional); found by reading the source | </html> missing at end of file | added </html>
+
